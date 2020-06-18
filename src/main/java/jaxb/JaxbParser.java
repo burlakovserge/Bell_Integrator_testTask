@@ -24,14 +24,21 @@ public class JaxbParser {
         return headers;
     }
 
+    public List<Integer> getColumnWidth(){
+        List <Integer> columnWidth= new ArrayList<>();
+        for (Column column : settingsFromXML.getColumns()){
+            columnWidth.add(Integer.parseInt(column.getWidth())); // +2
+        }
+        return columnWidth;
+    }
 
-//    public String findValueByField(String field) {
-//        //String res= "";
-//        for (Column column : settingsFromXML.getColumns()) {
-//            if (column.getTitle().equals(field)) {
-//                return column.getWidth();
-//            }
-//        } else throw NullPointerException;
-//        return res;
-//    }
+    public int getPageWidth (){
+        return Integer.parseInt(settingsFromXML.getPage().getWidth());
+    }
+
+    public int getPageHeight (){
+        return Integer.parseInt(settingsFromXML.getPage().getHeight());
+    }
+
+
 }

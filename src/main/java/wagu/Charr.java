@@ -27,11 +27,13 @@ class Charr {
 
     private final char c;
 
+
     protected Charr(int x, int y, char c) {
         this.x = x;
         this.y = y;
         this.c = c;
     }
+
 
     protected int getX() {
         return x;

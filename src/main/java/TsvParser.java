@@ -19,7 +19,8 @@ public class TsvParser {
     public void parse() throws IOException {
         while (scanner.hasNextLine()) {
             String[] arr = scanner.nextLine().split("\t");
-            list.add(Arrays.asList(arr[0], arr[1], arr[2]));
+            list.add(Arrays.asList(arr[0] ,  arr[1],  arr[2]));
+//            list.add(Arrays.asList(" "+ arr[0] + " ", " "+ arr[1] + " ", " "+ arr[2]));
         }
         fr.close();
     }
