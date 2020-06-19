@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="logPath">logs</Property>
+        <Property name="logDebugFile">debug</Property>
+        <Property name="logAllFile">all</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+        <File name="debugFile" fileName="${logPath}/${logDebugFile}.log" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %p\t%c{1.}: %m%n"/>
+        </File>
+        <File name="allFile" fileName="${logPath}/${logAllFile}.log" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %p\t%c{1.}: %m%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <logger level="DEBUG" name="utils.Log">
+            <appender-ref ref="console" level="INFO"/>
+            <appender-ref ref="debugFile" level="DEBUG" />
+        </logger>
+        <root level="ALL">
+            <appender-ref ref="allFile" level="ALL"/>
+        </root>
+    </Loggers>
+
+</Configuration>
