@@ -27,7 +27,7 @@ public class JaxbParser {
     public List<Integer> getColumnWidth(){
         List <Integer> columnWidth= new ArrayList<>();
         for (Column column : settingsFromXML.getColumns()){
-            columnWidth.add(Integer.parseInt(column.getWidth())); // +2
+            columnWidth.add(Integer.parseInt(column.getWidth()));
         }
         return columnWidth;
     }
